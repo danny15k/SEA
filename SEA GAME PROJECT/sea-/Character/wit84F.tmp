@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bscdwl44buni7"]
+
+[ext_resource type="PackedScene" uid="uid://c7fqa4ng422s6" path="res://Character/player_boy.tscn" id="1_krmjw"]
+[ext_resource type="Texture2D" uid="uid://cn8g58pbg07qm" path="res://sprite/Character_sprite/witch.png" id="2_8jsqw"]
+[ext_resource type="Script" path="res://Character/witch.gd" id="3_xmqpy"]
+
+[node name="witch" instance=ExtResource("1_krmjw")]
+position = Vector2(0, 1)
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(1, 2)
+texture = ExtResource("2_8jsqw")
+script = ExtResource("3_xmqpy")
+
+[node name="CollisionShape2D" parent="." index="2"]
+position = Vector2(3, 2)
