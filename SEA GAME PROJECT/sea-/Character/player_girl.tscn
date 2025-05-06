@@ -1,7 +1,8 @@
-[gd_scene load_steps=28 format=3 uid="uid://wehsl8pkunqk"]
+[gd_scene load_steps=29 format=3 uid="uid://wehsl8pkunqk"]
 
 [ext_resource type="Script" path="res://Character/player_boy.gd" id="1_vcj2e"]
 [ext_resource type="Texture2D" uid="uid://cua47xobc34ms" path="res://sprite/Character_sprite/girl.png" id="1_wi141"]
+[ext_resource type="PackedScene" uid="uid://c7tm74cmetsdd" path="res://Dialogue/dialogue.tscn" id="3_474rk"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_j3ukl"]
 animation = &"idle_down"
@@ -232,6 +233,7 @@ _data = {
 }
 
 [node name="player_girl" type="CharacterBody2D"]
+collision_mask = 3
 script = ExtResource("1_vcj2e")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -253,3 +255,5 @@ shape = SubResource("RectangleShape2D_yf43v")
 libraries = {
 "": SubResource("AnimationLibrary_h8urt")
 }
+
+[node name="Dialogue" parent="." instance=ExtResource("3_474rk")]

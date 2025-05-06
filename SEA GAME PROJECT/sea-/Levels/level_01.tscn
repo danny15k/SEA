@@ -1,8 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://ct6jkrsuyi3dc"]
+[gd_scene load_steps=16 format=3 uid="uid://ct6jkrsuyi3dc"]
 
 [ext_resource type="Texture2D" uid="uid://60780baoxbn2" path="res://sprite/background/tileset.png" id="1_4g5fc"]
-[ext_resource type="PackedScene" uid="uid://7ykbth2caodh" path="res://Character/party_allies.tscn" id="3_audji"]
+[ext_resource type="PackedScene" uid="uid://cv3d6emuq1ymv" path="res://actionables.tscn" id="3_7knm3"]
 [ext_resource type="PackedScene" uid="uid://ct16x5o1ghwgy" path="res://Character/witch.tscn" id="3_qa6cx"]
+[ext_resource type="Script" path="res://Character/witch.gd" id="3_tel68"]
+[ext_resource type="Resource" uid="uid://qrc0vgakjixd" path="res://Dialogue/Main_dialogue.dialogue" id="4_06tip"]
+[ext_resource type="Texture2D" uid="uid://cfe48jmxbno26" path="res://Dialogue/ImanorBalloon.png" id="5_6jobx"]
+[ext_resource type="PackedScene" uid="uid://br6k8dr0th0e" path="res://Character/player_captain.tscn" id="5_uior1"]
+[ext_resource type="Script" path="res://Dialogue/emotes.gd" id="6_1jyy8"]
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_manager.gd" id="6_wr4m7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_reddl"]
 texture = ExtResource("1_4g5fc")
@@ -220,11 +226,49 @@ texture = ExtResource("1_4g5fc")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_reddl")
 
+[sub_resource type="Animation" id="Animation_nxcvp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+
+[sub_resource type="Animation" id="Animation_go22r"]
+resource_name = "chat"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-3.57628e-07, 0.033333, 0.0999993, 0.166666, 0.233333, 0.299999, 0.333333, 0.366667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [8, 9, 10, 11, 12, 13, 14, 9]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dx13o"]
+_data = {
+"RESET": SubResource("Animation_nxcvp"),
+"chat": SubResource("Animation_go22r")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jeofd"]
+radius = 35.0143
+
 [node name="Level01" type="Node2D"]
 position = Vector2(97, 46)
-
-[node name="PartyAllies" parent="." instance=ExtResource("3_audji")]
-position = Vector2(68, 45)
 
 [node name="environment" type="Node" parent="."]
 
@@ -240,7 +284,54 @@ layer_1/tile_data = PackedInt32Array(393214, 1048576, 6, 458750, 1048576, 7, 393
 layer_2/name = "ground_2"
 layer_2/z_index = -5
 
-[node name="player_witch" parent="." instance=ExtResource("3_qa6cx")]
-position = Vector2(183, 43)
-motion_mode = 1
-wall_min_slide_angle = 0.863938
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(77, 80)
+scale = Vector2(1, 1.00279)
+
+[node name="npc_witch" parent="." instance=ExtResource("3_qa6cx")]
+position = Vector2(130, 58)
+rotation = -0.0510667
+collision_layer = 8
+collision_mask = 16
+script = ExtResource("3_tel68")
+
+[node name="Emotes2" type="Sprite2D" parent="npc_witch"]
+position = Vector2(0.328445, -26.0172)
+scale = Vector2(1.27344, 1.0625)
+texture = ExtResource("5_6jobx")
+hframes = 8
+vframes = 4
+frame = 8
+script = ExtResource("6_1jyy8")
+
+[node name="Emote_animation" type="AnimationPlayer" parent="npc_witch/Emotes2"]
+libraries = {
+"": SubResource("AnimationLibrary_dx13o")
+}
+
+[node name="Actionables" parent="npc_witch" instance=ExtResource("3_7knm3")]
+position = Vector2(-1.99741, -0.102096)
+collision_mask = 8
+dialogue_resource = ExtResource("4_06tip")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="npc_witch/Actionables"]
+position = Vector2(3.9948, 0.204185)
+rotation = 0.0510667
+shape = SubResource("CircleShape2D_jeofd")
+
+[node name="Captain" parent="." instance=ExtResource("5_uior1")]
+position = Vector2(78, 45)
+rotation = -0.0510667
+collision_layer = 9
+collision_mask = 11
+
+[node name="Camera2D" type="Camera2D" parent="Captain"]
+rotation = 0.0510667
+scale = Vector2(1.0237, 0.605638)
+limit_left = 0
+limit_top = 0
+limit_right = 480
+limit_bottom = 288
+
+[node name="DialogueManager" type="Node" parent="."]
+script = ExtResource("6_wr4m7")

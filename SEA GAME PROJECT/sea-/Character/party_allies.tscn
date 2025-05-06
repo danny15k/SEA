@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://7ykbth2caodh"]
+[gd_scene load_steps=6 format=3 uid="uid://7ykbth2caodh"]
 
 [ext_resource type="PackedScene" uid="uid://c7fqa4ng422s6" path="res://Character/player_boy.tscn" id="1_87ku0"]
 [ext_resource type="Script" path="res://Character/party_allies.gd" id="1_bhmct"]
 [ext_resource type="PackedScene" uid="uid://br6k8dr0th0e" path="res://Character/player_captain.tscn" id="2_illcn"]
 [ext_resource type="PackedScene" uid="uid://wehsl8pkunqk" path="res://Character/player_girl.tscn" id="3_tejog"]
+[ext_resource type="PackedScene" uid="uid://c7tm74cmetsdd" path="res://Dialogue/dialogue.tscn" id="5_6idgg"]
 
 [node name="PartyAllies" type="Node2D"]
 script = ExtResource("1_bhmct")
@@ -16,3 +17,5 @@ position = Vector2(-16, 5)
 
 [node name="player_girl" parent="." instance=ExtResource("3_tejog")]
 position = Vector2(11, 5)
+
+[node name="Dialogue" parent="." instance=ExtResource("5_6idgg")]
