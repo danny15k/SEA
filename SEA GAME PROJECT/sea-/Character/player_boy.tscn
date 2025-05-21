@@ -1,8 +1,7 @@
-[gd_scene load_steps=29 format=3 uid="uid://c7fqa4ng422s6"]
+[gd_scene load_steps=28 format=3 uid="uid://c7fqa4ng422s6"]
 
 [ext_resource type="Script" path="res://Character/player_boy.gd" id="1_8m4fx"]
 [ext_resource type="Texture2D" uid="uid://cjulturrac65b" path="res://sprite/Character_sprite/boy.png" id="2_c4u8i"]
-[ext_resource type="PackedScene" uid="uid://c7tm74cmetsdd" path="res://Dialogue/dialogue.tscn" id="3_wh5vx"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_j3ukl"]
 animation = &"idle_down"
@@ -254,5 +253,3 @@ shape = SubResource("RectangleShape2D_yf43v")
 libraries = {
 "": SubResource("AnimationLibrary_h8urt")
 }
-
-[node name="Dialogue" parent="." instance=ExtResource("3_wh5vx")]

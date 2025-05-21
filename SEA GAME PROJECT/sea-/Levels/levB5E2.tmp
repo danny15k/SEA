@@ -1,15 +1,16 @@
-[gd_scene load_steps=22 format=3 uid="uid://bmsv4x75dgk0l"]
+[gd_scene load_steps=23 format=3 uid="uid://ct6jkrsuyi3dc"]
 
-[ext_resource type="PackedScene" uid="uid://ct16x5o1ghwgy" path="res://Character/witch.tscn" id="1_uu7lu"]
-[ext_resource type="Texture2D" uid="uid://cfe48jmxbno26" path="res://Dialogue/ImanorBalloon.png" id="2_tanoy"]
-[ext_resource type="Script" path="res://Dialogue/emotes.gd" id="3_sn00j"]
-[ext_resource type="PackedScene" uid="uid://cv3d6emuq1ymv" path="res://actionables.tscn" id="4_g2wqs"]
-[ext_resource type="Resource" uid="uid://qrc0vgakjixd" path="res://Dialogue/Main_dialogue.dialogue" id="5_03n51"]
-[ext_resource type="PackedScene" uid="uid://br6k8dr0th0e" path="res://Character/player_captain.tscn" id="6_kv2xl"]
-[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_manager.gd" id="7_os0ak"]
-[ext_resource type="Texture2D" uid="uid://60780baoxbn2" path="res://sprite/background/tileset.png" id="8_ryavg"]
-[ext_resource type="Texture2D" uid="uid://c84jiwflhskh1" path="res://sprite/background/bb.png" id="9_ybs14"]
-[ext_resource type="Texture2D" uid="uid://ds6et13owsv72" path="res://sprite/background/aa.png" id="10_yaesg"]
+[ext_resource type="Texture2D" uid="uid://60780baoxbn2" path="res://sprite/background/tileset.png" id="1_4g5fc"]
+[ext_resource type="PackedScene" uid="uid://cv3d6emuq1ymv" path="res://actionables.tscn" id="3_7knm3"]
+[ext_resource type="PackedScene" uid="uid://ct16x5o1ghwgy" path="res://Character/witch.tscn" id="3_qa6cx"]
+[ext_resource type="Resource" uid="uid://qrc0vgakjixd" path="res://Dialogue/Main_dialogue.dialogue" id="4_06tip"]
+[ext_resource type="Texture2D" uid="uid://cfe48jmxbno26" path="res://Dialogue/ImanorBalloon.png" id="5_6jobx"]
+[ext_resource type="PackedScene" uid="uid://br6k8dr0th0e" path="res://Character/player_captain.tscn" id="5_uior1"]
+[ext_resource type="Script" path="res://Dialogue/emotes.gd" id="6_1jyy8"]
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_manager.gd" id="6_wr4m7"]
+[ext_resource type="Texture2D" uid="uid://c84jiwflhskh1" path="res://sprite/background/bb.png" id="9_hn2xt"]
+[ext_resource type="Texture2D" uid="uid://ds6et13owsv72" path="res://sprite/background/aa.png" id="10_kyk55"]
+[ext_resource type="PackedScene" uid="uid://c7fqa4ng422s6" path="res://Character/player_boy.tscn" id="11_446ne"]
 
 [sub_resource type="GDScript" id="GDScript_w2t1j"]
 script/source = "extends CharacterBody2D
@@ -79,8 +80,8 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_jeofd"]
 radius = 35.0143
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_reddl"]
-texture = ExtResource("8_ryavg")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5wj13"]
+texture = ExtResource("1_4g5fc")
 1:1/0 = 0
 2:1/0 = 0
 3:1/0 = 0
@@ -293,8 +294,8 @@ texture = ExtResource("8_ryavg")
 10:5/0 = 0
 12:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wj5qo"]
-texture = ExtResource("9_ybs14")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v7d84"]
+texture = ExtResource("9_hn2xt")
 2:1/0 = 0
 3:1/0 = 0
 4:1/0 = 0
@@ -377,8 +378,8 @@ texture = ExtResource("9_ybs14")
 7:9/0 = 0
 6:7/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xjnvi"]
-texture = ExtResource("10_yaesg")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6r25y"]
+texture = ExtResource("10_kyk55")
 12:0/0 = 0
 13:0/0 = 0
 14:0/0 = 0
@@ -563,12 +564,12 @@ texture = ExtResource("10_yaesg")
 
 [sub_resource type="TileSet" id="TileSet_lt12p"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_reddl")
-sources/3 = SubResource("TileSetAtlasSource_wj5qo")
-sources/5 = SubResource("TileSetAtlasSource_xjnvi")
+sources/0 = SubResource("TileSetAtlasSource_5wj13")
+sources/3 = SubResource("TileSetAtlasSource_v7d84")
+sources/5 = SubResource("TileSetAtlasSource_6r25y")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e5gyv"]
-texture = ExtResource("9_ybs14")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2lx1g"]
+texture = ExtResource("9_hn2xt")
 2:1/0 = 0
 3:1/0 = 0
 4:1/0 = 0
@@ -641,9 +642,9 @@ texture = ExtResource("9_ybs14")
 15:6/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_0q2wl"]
-sources/3 = SubResource("TileSetAtlasSource_e5gyv")
+sources/3 = SubResource("TileSetAtlasSource_2lx1g")
 
-[node name="Level02" type="Node2D"]
+[node name="Level01" type="Node2D"]
 position = Vector2(97, 46)
 
 [node name="environment" type="Node" parent="."]
@@ -652,7 +653,8 @@ position = Vector2(97, 46)
 position = Vector2(77, 80)
 scale = Vector2(1, 1.00279)
 
-[node name="npc_witch" parent="." instance=ExtResource("1_uu7lu")]
+[node name="npc_witch" parent="." instance=ExtResource("3_qa6cx")]
+visible = false
 position = Vector2(130, 58)
 rotation = -0.0510667
 collision_layer = 8
@@ -662,28 +664,28 @@ script = SubResource("GDScript_w2t1j")
 [node name="Emotes2" type="Sprite2D" parent="npc_witch"]
 position = Vector2(0.328445, -26.0172)
 scale = Vector2(1.27344, 1.0625)
-texture = ExtResource("2_tanoy")
+texture = ExtResource("5_6jobx")
 hframes = 8
 vframes = 4
 frame = 8
-script = ExtResource("3_sn00j")
+script = ExtResource("6_1jyy8")
 
 [node name="Emote_animation" type="AnimationPlayer" parent="npc_witch/Emotes2"]
 libraries = {
 "": SubResource("AnimationLibrary_dx13o")
 }
 
-[node name="Actionables" parent="npc_witch" instance=ExtResource("4_g2wqs")]
+[node name="Actionables" parent="npc_witch" instance=ExtResource("3_7knm3")]
 position = Vector2(-1.99741, -0.102096)
 collision_mask = 8
-dialogue_resource = ExtResource("5_03n51")
+dialogue_resource = ExtResource("4_06tip")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="npc_witch/Actionables"]
 position = Vector2(3.9948, 0.204185)
 rotation = 0.0510667
 shape = SubResource("CircleShape2D_jeofd")
 
-[node name="Captain" parent="." instance=ExtResource("6_kv2xl")]
+[node name="Captain" parent="." instance=ExtResource("5_uior1")]
 position = Vector2(78, 45)
 rotation = -0.0510667
 collision_layer = 9
@@ -698,7 +700,7 @@ limit_right = 480
 limit_bottom = 288
 
 [node name="DialogueManager" type="Node" parent="."]
-script = ExtResource("7_os0ak")
+script = ExtResource("6_wr4m7")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_lt12p")
@@ -717,8 +719,34 @@ layer_3/name = "ground_2"
 layer_3/z_index = -5
 layer_3/tile_data = PackedInt32Array(-13, 720901, 2, 65523, 720901, 3, -131084, 786437, 0, -65548, 786437, 1, -12, 786437, 2, 65524, 786437, 3, -131083, 851973, 0, -65547, 851973, 1, -11, 851973, 2, 65525, 851973, 3, -131082, 917509, 0, -65546, 917509, 1, -10, 917509, 2, 65526, 917509, 3, -131081, 983045, 0, -65545, 983045, 1, -9, 983045, 2, 65527, 983045, 3, -131080, 1048581, 0, -65544, 1048581, 1, -8, 1048581, 2, 65528, 1048581, 3, -7, 1114117, 2, 65529, 1114117, 3, 589834, 720901, 3, 393227, 786437, 0, 524299, 786437, 2, 589835, 786437, 3, 393228, 851973, 0, 458764, 851973, 1, 524300, 851973, 2, 589836, 851973, 3, 393229, 917509, 0, 458765, 917509, 1, 524301, 917509, 2, 589837, 917509, 3, 393230, 983045, 0, 458766, 983045, 1, 524302, 983045, 2, 589838, 983045, 3, 393231, 1048581, 0, 458767, 1048581, 1, 524303, 1048581, 2, 589839, 1048581, 3, 524304, 1114117, 2, 589840, 1114117, 3, 983033, 720901, 2, 1048569, 720901, 3, 851962, 786437, 0, 917498, 786437, 1, 983034, 786437, 2, 1048570, 786437, 3, 851963, 851973, 0, 917499, 851973, 1, 983035, 851973, 2, 1048571, 851973, 3, 851964, 917509, 0, 917500, 917509, 1, 983036, 917509, 2, 1048572, 917509, 3, 851965, 983045, 0, 917501, 983045, 1, 983037, 983045, 2, 1048573, 983045, 3, 851966, 1048581, 0, 917502, 1048581, 1, 983038, 1048581, 2, 1048574, 1048581, 3, 983039, 1114117, 2, 1048575, 1114117, 3, 393207, 1114117, 13, 458743, 1114117, 14, 393208, 1179653, 13, 458744, 1179653, 14, 1376253, 1114117, 13, 1441789, 1114117, 14, 1376254, 1179653, 13, 1441790, 1179653, 14, 1572875, 983045, 11, 1638411, 983045, 12, 1572876, 1048581, 11, 1638412, 1048581, 12, -65531, 983045, 11, 5, 983045, 12, -65530, 1048581, 11, 6, 1048581, 12, 458763, 786437, 1, 524298, 720901, 2, 786431, 983045, 11, 720896, 1048581, 11, 786432, 1048581, 12, 851967, 983045, 12)
 layer_4/name = "Layer4"
-layer_4/tile_data = PackedInt32Array(65532, 720901, 8, 131068, 720901, 9, 65533, 786437, 8, 131069, 786437, 9, 1441782, 983045, 9, 1376247, 1048581, 8, 393203, 983045, 8, 458739, 983045, 9, 393204, 1048581, 8, 458740, 1048581, 9, -65515, 983045, 8, 21, 983045, 9, -65514, 1048581, 8, 22, 1048581, 9, 1441813, 983045, 8, 1507349, 983045, 9, 1441814, 1048581, 8, 1507350, 1048581, 9, 1310733, 1114117, 8, 1376269, 1114117, 9, 1310734, 1179653, 8, 1376270, 1179653, 9, -196605, 1114117, 8, -131069, 1114117, 9, -196604, 1179653, 8, -131068, 1179653, 9, 1507315, 1114117, 8, 1572851, 1114117, 9, 1507316, 1179653, 8, 1572852, 1179653, 9, 131062, 327683, 6, 196598, 262147, 6, 1376246, 983045, 8, 1441783, 1048581, 9, 1114132, 851973, 8, 1179668, 851973, 9, 1114133, 917509, 8, 1179669, 917509, 9, -65551, 851973, 8, -15, 851973, 9, -65550, 917509, 8, -14, 917509, 9)
 
 [node name="TileMap2" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_0q2wl")
 format = 2
+
+[node name="player_boy" parent="." instance=ExtResource("11_446ne")]
+position = Vector2(124, 45)
+
+[node name="Emotes2" type="Sprite2D" parent="player_boy"]
+position = Vector2(0.328445, -26.0172)
+scale = Vector2(1.27344, 1.0625)
+texture = ExtResource("5_6jobx")
+hframes = 8
+vframes = 4
+frame = 8
+script = ExtResource("6_1jyy8")
+
+[node name="Emote_animation" type="AnimationPlayer" parent="player_boy/Emotes2"]
+libraries = {
+"": SubResource("AnimationLibrary_dx13o")
+}
+
+[node name="Actionables" parent="player_boy" instance=ExtResource("3_7knm3")]
+position = Vector2(-1.99741, -0.102096)
+collision_mask = 8
+dialogue_resource = ExtResource("4_06tip")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="player_boy/Actionables"]
+position = Vector2(3.9948, 0.204185)
+rotation = 0.0510667
+shape = SubResource("CircleShape2D_jeofd")
