@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://y3nj0g76vana"]
+
+[ext_resource type="Texture2D" uid="uid://tcexcs1yo5jk" path="res://sprite/Inventory/slot.png" id="1_c24ra"]
+[ext_resource type="Script" uid="uid://kbtpjih4g5lh" path="res://Inventory/slot.gd" id="1_gwimm"]
+[ext_resource type="Script" uid="uid://ckbuaejyyavoy" path="res://Inventory/stats.gd" id="3_hiqfk"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8fqbu"]
+texture = ExtResource("1_c24ra")
+
+[node name="Slot" type="PanelContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_8fqbu")
+script = ExtResource("1_gwimm")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("1_c24ra")
+expand_mode = 1
+script = ExtResource("3_hiqfk")
+
+[node name="debug" type="Label" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+text = "0"

@@ -187,15 +187,15 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_h8urt"]
 _data = {
-"RESET": SubResource("Animation_7c0x5"),
-"Walk_down": SubResource("Animation_k3tcl"),
-"Walk_left": SubResource("Animation_hfjtg"),
-"Walk_right": SubResource("Animation_n42eb"),
-"Walk_up": SubResource("Animation_1le6d"),
-"idle_down": SubResource("Animation_sjr55"),
-"idle_left": SubResource("Animation_cdwec"),
-"idle_right": SubResource("Animation_8ysxe"),
-"idle_up": SubResource("Animation_gkjn1")
+&"RESET": SubResource("Animation_7c0x5"),
+&"Walk_down": SubResource("Animation_k3tcl"),
+&"Walk_left": SubResource("Animation_hfjtg"),
+&"Walk_right": SubResource("Animation_n42eb"),
+&"Walk_up": SubResource("Animation_1le6d"),
+&"idle_down": SubResource("Animation_sjr55"),
+&"idle_left": SubResource("Animation_cdwec"),
+&"idle_right": SubResource("Animation_8ysxe"),
+&"idle_up": SubResource("Animation_gkjn1")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h4t6k"]
@@ -217,7 +217,7 @@ parameters/idle/blend_position = Vector2(-0.180124, -0.0710382)
 
 [node name="AnimationPlayer_" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_h8urt")
+&"": SubResource("AnimationLibrary_h8urt")
 }
 speed_scale = 0.62
 

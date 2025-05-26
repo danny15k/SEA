@@ -1,0 +1,12 @@
+[gd_scene load_steps=5 format=3 uid="uid://bapd3heqxnfs1"]
+
+[ext_resource type="PackedScene" uid="uid://y3nj0g76vana" path="res://Inventory/slot.tscn" id="1_myyie"]
+[ext_resource type="Script" uid="uid://bj0vd64qhanb5" path="res://Inventory/passive_slot.gd" id="2_myyie"]
+[ext_resource type="Texture2D" uid="uid://tcexcs1yo5jk" path="res://sprite/Inventory/slot.png" id="2_pbpj3"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ih3hi"]
+texture = ExtResource("2_pbpj3")
+
+[node name="PassiveSlot" instance=ExtResource("1_myyie")]
+theme_override_styles/panel = SubResource("StyleBoxTexture_ih3hi")
+script = ExtResource("2_myyie")

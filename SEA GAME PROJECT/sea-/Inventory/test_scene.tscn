@@ -1,0 +1,113 @@
+[gd_scene load_steps=9 format=3 uid="uid://1vir5jldfakd"]
+
+[ext_resource type="Texture2D" uid="uid://ntovh3qmowid" path="res://sprite/Inventory/bgINVENTORY.png" id="1_fxtpf"]
+[ext_resource type="Script" uid="uid://ifu0yya2dnww" path="res://Inventory/ui_inventory.gd" id="1_k8hrv"]
+[ext_resource type="Script" uid="uid://dyid1citil5ds" path="res://Inventory/inventory.gd" id="2_d6mou"]
+[ext_resource type="PackedScene" uid="uid://y3nj0g76vana" path="res://Inventory/slot.tscn" id="2_ubyvf"]
+[ext_resource type="PackedScene" uid="uid://bapd3heqxnfs1" path="res://Inventory/passive_slot.tscn" id="3_ubyvf"]
+[ext_resource type="Script" uid="uid://bp78xw031cd0c" path="res://Inventory/equipment.gd" id="3_yob4n"]
+[ext_resource type="PackedScene" uid="uid://br6k8dr0th0e" path="res://Character/player_captain.tscn" id="6_wbvge"]
+[ext_resource type="PackedScene" uid="uid://8nb4rqe3qup4" path="res://Inventory/abstract_item.tscn" id="7_k8hrv"]
+
+[node name="test_scene" type="Node2D"]
+
+[node name="UI_Inventory" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_k8hrv")
+
+[node name="TextureRect" type="TextureRect" parent="UI_Inventory"]
+layout_mode = 0
+offset_left = -64.0
+offset_top = 32.0
+offset_right = 706.0
+offset_bottom = 465.0
+texture = ExtResource("1_fxtpf")
+expand_mode = 1
+
+[node name="Inventory" type="GridContainer" parent="UI_Inventory/TextureRect"]
+layout_mode = 0
+offset_left = 198.0
+offset_top = 127.0
+offset_right = 388.0
+offset_bottom = 339.0
+theme_override_constants/h_separation = 18
+columns = 3
+script = ExtResource("2_d6mou")
+
+[node name="Slot" parent="UI_Inventory/TextureRect/Inventory" instance=ExtResource("2_ubyvf")]
+layout_mode = 2
+
+[node name="Slot2" parent="UI_Inventory/TextureRect/Inventory" instance=ExtResource("2_ubyvf")]
+layout_mode = 2
+
+[node name="Slot3" parent="UI_Inventory/TextureRect/Inventory" instance=ExtResource("2_ubyvf")]
+layout_mode = 2
+
+[node name="Slot4" parent="UI_Inventory/TextureRect/Inventory" instance=ExtResource("2_ubyvf")]
+layout_mode = 2
+
+[node name="Slot5" parent="UI_Inventory/TextureRect/Inventory" instance=ExtResource("2_ubyvf")]
+layout_mode = 2
+
+[node name="Slot6" parent="UI_Inventory/TextureRect/Inventory" instance=ExtResource("2_ubyvf")]
+layout_mode = 2
+
+[node name="Slot7" parent="UI_Inventory/TextureRect/Inventory" instance=ExtResource("2_ubyvf")]
+layout_mode = 2
+
+[node name="Slot8" parent="UI_Inventory/TextureRect/Inventory" instance=ExtResource("2_ubyvf")]
+layout_mode = 2
+
+[node name="Slot9" parent="UI_Inventory/TextureRect/Inventory" instance=ExtResource("2_ubyvf")]
+layout_mode = 2
+
+[node name="Slot10" parent="UI_Inventory/TextureRect/Inventory" instance=ExtResource("2_ubyvf")]
+layout_mode = 2
+
+[node name="Slot11" parent="UI_Inventory/TextureRect/Inventory" instance=ExtResource("2_ubyvf")]
+layout_mode = 2
+
+[node name="Slot12" parent="UI_Inventory/TextureRect/Inventory" instance=ExtResource("2_ubyvf")]
+layout_mode = 2
+
+[node name="Equipment" type="Control" parent="UI_Inventory/TextureRect"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_yob4n")
+
+[node name="PassiveSlot" parent="UI_Inventory/TextureRect/Equipment" instance=ExtResource("3_ubyvf")]
+layout_mode = 0
+offset_left = 470.0
+offset_top = 259.0
+offset_right = 520.0
+offset_bottom = 309.0
+slot_type = 1
+
+[node name="PassiveSlot2" parent="UI_Inventory/TextureRect/Equipment" instance=ExtResource("3_ubyvf")]
+layout_mode = 0
+offset_left = 536.0
+offset_top = 259.0
+offset_right = 586.0
+offset_bottom = 309.0
+slot_type = 2
+
+[node name="ATK" type="Label" parent="UI_Inventory"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "0"
+
+[node name="Captain" parent="." instance=ExtResource("6_wbvge")]
+
+[node name="AbstractItem" parent="." instance=ExtResource("7_k8hrv")]
+position = Vector2(536, 79)
+ID = "10"
+
+[node name="AbstractItem2" parent="." instance=ExtResource("7_k8hrv")]
+position = Vector2(132, 78)
