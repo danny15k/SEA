@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://qrc0vgakjixd" path="res://Dialogue/Main_dialogue.dialogue" id="4_06tip"]
 [ext_resource type="Texture2D" uid="uid://cfe48jmxbno26" path="res://Dialogue/ImanorBalloon.png" id="5_6jobx"]
 [ext_resource type="PackedScene" uid="uid://br6k8dr0th0e" path="res://Character/player_captain.tscn" id="5_uior1"]
+<<<<<<< Updated upstream
 [ext_resource type="Script" path="res://Dialogue/emotes.gd" id="6_1jyy8"]
 [ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_manager.gd" id="6_wr4m7"]
 [ext_resource type="Texture2D" uid="uid://c84jiwflhskh1" path="res://sprite/background/bb.png" id="9_hn2xt"]
@@ -14,6 +15,16 @@
 [ext_resource type="Texture2D" uid="uid://bg7ilygwi814p" path="res://sprite/Enemy_sprite/isopodbasic_red.png" id="13_1ykms"]
 [ext_resource type="Texture2D" uid="uid://csdjqr0vfbxus" path="res://sprite/Enemy_sprite/crab.png" id="13_8xyvv"]
 [ext_resource type="Texture2D" uid="uid://dbvdd2sbjigj7" path="res://sprite/Enemy_sprite/jellyfish_red.png" id="14_yj4ke"]
+=======
+[ext_resource type="Script" uid="uid://cto4fp0exbmip" path="res://Dialogue/emotes.gd" id="6_1jyy8"]
+[ext_resource type="Script" uid="uid://654vm2drtivc" path="res://addons/dialogue_manager/dialogue_manager.gd" id="6_wr4m7"]
+[ext_resource type="Texture2D" path="res://sprite/background/bb.png" id="9_hn2xt"]
+[ext_resource type="Texture2D" path="res://sprite/background/aa.png" id="10_kyk55"]
+[ext_resource type="PackedScene" uid="uid://c7fqa4ng422s6" path="res://Character/player_boy.tscn" id="11_446ne"]
+[ext_resource type="Texture2D" path="res://sprite/Enemy_sprite/isopodbasic_red.png" id="13_1ykms"]
+[ext_resource type="Texture2D" path="res://sprite/Enemy_sprite/crab.png" id="13_8xyvv"]
+[ext_resource type="Texture2D" path="res://sprite/Enemy_sprite/jellyfish_red.png" id="14_yj4ke"]
+>>>>>>> Stashed changes
 
 [sub_resource type="GDScript" id="GDScript_w2t1j"]
 script/source = "extends CharacterBody2D
@@ -76,8 +87,13 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dx13o"]
 _data = {
+<<<<<<< Updated upstream
 "RESET": SubResource("Animation_nxcvp"),
 "chat": SubResource("Animation_go22r")
+=======
+&"RESET": SubResource("Animation_nxcvp"),
+&"chat": SubResource("Animation_go22r")
+>>>>>>> Stashed changes
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jeofd"]
@@ -714,7 +730,7 @@ script = ExtResource("6_1jyy8")
 
 [node name="Emote_animation" type="AnimationPlayer" parent="npc_witch/Emotes2"]
 libraries = {
-"": SubResource("AnimationLibrary_dx13o")
+&"": SubResource("AnimationLibrary_dx13o")
 }
 
 [node name="Actionables" parent="npc_witch" instance=ExtResource("3_7knm3")]
@@ -781,7 +797,11 @@ script = ExtResource("6_1jyy8")
 
 [node name="Emote_animation" type="AnimationPlayer" parent="player_boy/Emotes2"]
 libraries = {
+<<<<<<< Updated upstream
 "": SubResource("AnimationLibrary_dx13o")
+=======
+&"": SubResource("AnimationLibrary_dx13o")
+>>>>>>> Stashed changes
 }
 
 [node name="Actionables" parent="player_boy" instance=ExtResource("3_7knm3")]
